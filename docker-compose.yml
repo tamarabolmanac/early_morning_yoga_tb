@@ -1,0 +1,32 @@
+version: '3.7'
+services:
+  db:
+    image: 'postgres:latest'
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: username          # Create a user 'username'
+      POSTGRES_PASSWORD: password      # Set the password for the user
+      POSTGRES_DB: rails_development   # Create the database 'rails_development'
+    networks:
+      - app_network
+
+  rails:
+    build: ./ 
+    ports:
+      - '3000:3000'
+    volumes:
+      - .:/docker/app
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgres://username:password@db:5432/rails_development
+    networks:
+      - app_network
+
+volumes:
+  postgres:
+
+networks:
+  app_network:
+    driver: bridge
