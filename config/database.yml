@@ -87,13 +87,7 @@ production:
     password: p7e379a8bd9415fff6ee73c78519f5a5428e9ad7d767f398b9e5be7f44ff3a0ee
   cache:
     <<: *primary_production
-    database: early_morning_yoga_production_cache
-    migrations_paths: db/cache_migrate
   queue:
     <<: *primary_production
-    database: early_morning_yoga_production_queue
-    migrations_paths: db/queue_migrate
   cable:
     <<: *primary_production
-    database: early_morning_yoga_production_cable
-    migrations_paths: db/cable_migrate
