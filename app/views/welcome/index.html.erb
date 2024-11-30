@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="turbo-visit-control" content="reload">
+
   <title>Early Morning Yoga</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
@@ -20,7 +22,13 @@
     <p>Your peaceful start to a healthy day</p>
   </div>
   <!-- Login Button -->
-  <a href="/session/new" class="login-btn">Login</a>
+  <% if !session[:current_user_id] %>
+    <a href="/session/new" class="login-btn">Login</a>
+  <% else %>
+  <%= button_to logout_path, method: :delete, class: 'login-btn' do %>
+    Sign out
+    <% end %>
+  <% end %>
 </header>
 
   <!-- Main Content -->

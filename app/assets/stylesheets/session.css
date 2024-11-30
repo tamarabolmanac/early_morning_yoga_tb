@@ -162,3 +162,68 @@ body {
     font-size: 1em;
   }
 }
+
+/* Flash Messages */
+.flash-message {
+  padding: 15px;
+  margin: 0; /* Remove any default margin */
+  margin-bottom: 20px; /* Add margin to separate it from the next section (optional) */
+  border-radius: 5px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.flash-message.notice {
+  background-color: #d4edda; /* Light green background for success */
+  color: #155724; /* Dark green text */
+  border: 1px solid #c3e6cb; /* Light green border */
+}
+
+.flash-message.alert {
+  background-color: #f8d7da; /* Light red background for errors */
+  color: #721c24; /* Dark red text */
+  border: 1px solid #f5c6cb; /* Light red border */
+}
+
+/* Remove any extra margin in the body */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Header Section */
+.header {
+  position: relative;
+  height: 100vh;
+  background: linear-gradient(135deg, #a8d5ba, #b7a392);  /* Soft gradient from green to brown */
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 80%;
+}
+
+.login-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background-color: #4e8b5b;
+  color: white;
+  font-size: 1.2rem;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.login-btn:hover {
+  background-color: #3c7252;
+}
+

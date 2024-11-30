@@ -5,4 +5,8 @@ module Authentication
     reset_session
     session[:current_user_id] = user.id
   end
+
+  def logout
+    reset_session
+  end
 end

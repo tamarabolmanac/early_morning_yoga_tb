@@ -1,4 +1,6 @@
 class SessionController < ApplicationController
+  include Authentication
+
   def new
 
   end
@@ -7,6 +9,7 @@ class SessionController < ApplicationController
     @user = User.find_by(email: params[:email])
     if @user
       if @user.authenticate(params[:password])
+        login(@user)
         redirect_to root_path, notice: "Signed in."
       else
         flash.now[:alert] = "Incorrect email or password."
@@ -18,6 +21,8 @@ class SessionController < ApplicationController
     end
   end
 
-  def  destroy
+  def destroy
+    logout
+    redirect_to root_path, notice: "Signed out."
   end
 end
