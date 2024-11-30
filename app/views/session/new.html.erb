@@ -1,0 +1,28 @@
+<% if flash[:notice] %>
+  <div class="flash-message notice">
+    <%= flash[:notice] %>
+  </div>
+<% elsif flash[:alert] %>
+  <div class="flash-message alert">
+    <%= flash[:alert] %>
+  </div>
+<% end %>
+
+<%= content_tag :h1, "Please Log in", class: "page-title" %>
+
+<%= form_with url: session_index_path, method: :post, local: true, class: "login-form" do |f| %>
+  <div class="form-field">
+    <%= f.label :email, "Email Address" %>
+    <%= f.email_field :email, value: params[:session] && params[:session][:email], required: true, placeholder: "Enter your email", class: "input-field" %>
+  </div>
+  
+  <div class="form-field">
+    <%= f.label :password, "Password" %>
+    <%= f.password_field :password, required: true, placeholder: "Enter your password", class: "input-field" %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit "Sign In", class: "submit-btn" %>
+    <p><%= link_to "Sign Up", new_user_path, class: "sign-up-link" %></p>
+  </div>
+<% end %>

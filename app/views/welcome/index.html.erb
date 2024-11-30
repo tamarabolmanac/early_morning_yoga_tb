@@ -8,31 +8,35 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <% if flash[:notice] %>
+    <div class="flash-message notice">
+      <%= flash[:notice] %>
+    </div>
+  <% end %>
   <!-- Header Section -->
   <header class="header">
-    <div class="overlay">
-      <h1>Welcome to Early Morning Yoga</h1>
-      <p>Your peaceful start to a healthy day</p>
-    </div>
-  </header>
+  <div class="overlay">
+    <h1>Welcome to Early Morning Yoga</h1>
+    <p>Your peaceful start to a healthy day</p>
+  </div>
+  <!-- Login Button -->
+  <a href="/session/new" class="login-btn">Login</a>
+</header>
 
   <!-- Main Content -->
   <main class="main-content">
     <section class="intro">
       <h2>About Yoga</h2>
-      <p>Yoga is a practice that aligns the body, mind, and spirit. It brings harmony and balance, enhances flexibility, and helps reduce stress. Whether you are a beginner or experienced, yoga offers many benefits that enhance your overall well-being.</p>
+      <p>Yoga is a practice that aligns the body, mind, and spirit...</p>
     </section>
-
     <section class="health">
       <h2>Living a Healthy Life</h2>
-      <p>Living a healthy life involves nourishing your body, mind, and soul. A balanced diet, regular physical activity, adequate sleep, and mindfulness practices like yoga can help you maintain your health and well-being.</p>
+      <p>Living a healthy life involves nourishing your body, mind, and soul...</p>
     </section>
-
     <section class="routine">
       <h2>Daily Routines</h2>
-      <p>Start each day with intention. A simple morning yoga routine can set the tone for the rest of your day. Establish a peaceful and mindful morning ritual to help you feel centered, energized, and focused.</p>
+      <p>Start each day with intention...</p>
     </section>
-
     <section class="links">
       <h2>Explore More</h2>
       <ul>
