@@ -45,7 +45,9 @@ group :development, :test do
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
 
   gem "byebug"
-  
+
+  gem 'letter_opener'
+
   # Static analysis for security vulnerabilities [https://brakemanscanner.org/]
   gem "brakeman", require: false
 

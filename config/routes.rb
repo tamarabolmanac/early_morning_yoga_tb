@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   post "login", to: "session#create"
   delete "logout", to: "session#destroy", as: 'logout'
   get "login", to: "session#new"
+
+  get 'users/confirm', to: 'users#confirm', as: 'confirm_user'
 end

@@ -15,6 +15,13 @@ Rails.application.configure do
   # Enable server timing.
   config.server_timing = true
 
+  config.assets.debug = true
+  config.assets.digest = true
+  config.assets.compile = true
+  # Enable the asset pipeline
+  config.assets.precompile += %w( application.js application.css )
+  config.assets.enabled = true
+
   # Enable/disable Action Controller caching. By default Action Controller caching is disabled.
   # Run rails dev:cache to toggle Action Controller caching.
   if Rails.root.join("tmp/caching-dev.txt").exist?
@@ -39,6 +46,12 @@ Rails.application.configure do
 
   # Set localhost to be used by links generated in mailer templates.
   config.action_mailer.default_url_options = { host: "localhost", port: 3000 }
+
+  config.action_mailer.show_previews = true
+
+  # config/environments/development.rb
+
+  config.action_mailer.delivery_method = :letter_opener
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log

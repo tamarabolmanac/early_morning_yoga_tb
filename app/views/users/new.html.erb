@@ -10,7 +10,7 @@
 
 <%= content_tag :h1, "Sign Up", class: "page-title" %>
 
-<div class="form-container">
+<div class="form-container ">
   <!-- Left Form Section -->
   <div class="form-section">
     <%= form_with model: @user, local: true, class: "registration-form" do |f| %>
@@ -40,8 +40,8 @@
       </div>
   
       <div class="form-field">
-        <%= f.check_box :newsletter, class: "checkbox-field" %>
-        <%= f.label :newsletter, "Subscribe to our newsletter" %>
+        <%= f.check_box :subscribed_to_newsletter, class: "checkbox-field" %>
+        <%= f.label :subscribed_to_newsletter, "Subscribe to our newsletter" %>
       </div>
   
       <div class="form-actions">
@@ -53,6 +53,6 @@
 
   <!-- Right Yoga Image Section -->
   <div class="image-section">
-    <img src="app/assets/images/bgd.jpg" alt="Yoga Image" class="yoga-image" />
+    <%= image_tag asset_path('bgd.jpg'), class: "yoga-image" %>
   </div>
 </div>
