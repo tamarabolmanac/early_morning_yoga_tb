@@ -1,0 +1,99 @@
+/* General Layout */
+body {
+  font-family: 'Raleway', sans-serif;
+  background-color: #f4f7f1;  /* Light beige background */
+  margin: 0;
+  padding: 0;
+}
+
+h1.page-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-top: 40px;
+  color: #4e8b5b;
+}
+
+/* Form Container */
+.form-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 20px;
+}
+
+.form-section {
+  width: 45%; /* Left section with the form */
+  background: rgba(255, 255, 255, 0.8); /* Transparent white background */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.image-section {
+  width: 45%; /* Right section with the image */
+}
+
+.yoga-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Fields */
+.form-field {
+  margin-bottom: 20px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  font-size: 1.1em;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.checkbox-field {
+  margin-right: 10px;
+}
+
+/* Submit Button */
+.submit-btn {
+  padding: 12px 20px;
+  background-color: #4e8b5b;
+  color: white;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.submit-btn:hover {
+  background-color: #3d6e4a;
+}
+
+/* Links */
+.login-link {
+  color: #4e8b5b;
+  text-decoration: none;
+}
+
+.login-link:hover {
+  text-decoration: underline;
+}
+
+.flash-message {
+  text-align: center;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+
+.notice {
+  background-color: #a8d5ba;
+}
+
+.alert {
+  background-color: #f8d7da;
+}
