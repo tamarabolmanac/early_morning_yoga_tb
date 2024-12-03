@@ -8,7 +8,7 @@ class User < ApplicationRecord
 
   def confirm!
     update_columns(confirmed_at: Time.current)
-  end
+  end 
 
   def confirmed?
     confirmed_at.present?
@@ -19,7 +19,7 @@ class User < ApplicationRecord
   end
 
   def generate_confirmation_token
-    signed_id expires_in: CONFIRMATION_TOKEN_EXPIRATION, purpose: :confirm_email
+    signed_id(expires_in: CONFIRMATION_TOKEN_EXPIRATION)
   end
 
   def send_confirmation_email!
