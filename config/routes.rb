@@ -5,7 +5,8 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :create, :index, :show]
 
-  get 'users/confirm', to: 'users#confirm', as: 'confirm_user'
+  get 'users/confirm/:token', to: 'users#confirm', as: 'confirm_user'
+
   post "login", to: "session#create"
   delete "logout", to: "session#destroy", as: 'logout'
   get "login", to: "session#new"
