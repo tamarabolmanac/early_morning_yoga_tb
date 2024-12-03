@@ -26,13 +26,13 @@ class UsersController < ApplicationController
   end
 
   def confirm
-    @user = User.find_signed(params[:confirmation_token])
+    @user = User.find_signed(params[:token])
 
     if @user.present?
       @user.confirm!
       redirect_to root_path, notice: "Your account has been confirmed."
     else
-      redirect_to sign_in_path, alert: "Invalid token."
+      redirect_to new_user_path, alert: "Invalid token."
     end
   end
 
