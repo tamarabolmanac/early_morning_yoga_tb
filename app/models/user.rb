@@ -6,6 +6,14 @@ class User < ApplicationRecord
   
   validates :email, format: {with: URI::MailTo::EMAIL_REGEXP}, presence: true, uniqueness: true
 
+  validate :password_complexity
+
+  def password_complexity
+    if password.present? and !password.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{12,}$/)
+      errors.add :password, "must include at least one lowercase letter, one uppercase letter, one digit, and needs to be minimum 12 characters."
+    end
+  end
+
   def confirm!
     update_columns(confirmed_at: Time.current)
   end 

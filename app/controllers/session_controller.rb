@@ -2,7 +2,6 @@ class SessionController < ApplicationController
   include Authentication
 
   def new
-
   end
 
   def create

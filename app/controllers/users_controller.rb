@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-
+  
     if @user.save
       @user.send_confirmation_email!
       redirect_to root_path, notice: "Please check your email for confirmation instructions."
@@ -15,14 +15,6 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find_signed(params[:token], purpose: :confirm_email)
-
-    if @user.present?
-      @user.confirm!
-      redirect_to root_path, notice: "Your account has been confirmed."
-    else
-      redirect_to new_user_path, alert: "Invalid token."
-    end
   end
 
   def confirm
@@ -30,7 +22,7 @@ class UsersController < ApplicationController
 
     if @user.present?
       @user.confirm!
-      redirect_to root_path, notice: "Your account has been confirmed."
+      redirect_to login_path, notice: "Your account has been confirmed."
     else
       redirect_to new_user_path, alert: "Invalid token."
     end
