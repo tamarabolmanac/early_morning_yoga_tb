@@ -4,55 +4,61 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="turbo-visit-control" content="reload">
-
   <title>Early Morning Yoga</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+  <!-- Flash message -->
   <% if flash[:notice] %>
     <div class="flash-message notice">
       <%= flash[:notice] %>
     </div>
   <% end %>
+
   <!-- Header Section -->
   <header class="header">
-  <div class="overlay">
-    <h1>Welcome to Early Morning Yoga</h1>
-    <p>Your peaceful start to a healthy day</p>
-  </div>
-  <!-- Login Button -->
-  <% if !session[:current_user_id] %>
-    <a href="/session/new" class="login-btn">Login</a>
-  <% else %>
-  <%= button_to logout_path, method: :delete, class: 'login-btn' do %>
-    Sign out
+    <div class="overlay">
+      <h1>Welcome to Early Morning Yoga</h1>
+      <p>Your peaceful start to a healthy day</p>
+    </div>
+
+    <!-- Login Button -->
+    <% if !session[:current_user_id] %>
+      <a href="/session/new" class="login-btn">Login</a>
+    <% else %>
+      <%= button_to logout_path, method: :delete, class: 'login-btn' do %>
+        Sign out
+      <% end %>
     <% end %>
-  <% end %>
-</header>
+  </header>
 
   <!-- Main Content -->
   <main class="main-content">
-    <section class="intro">
-      <h2>About Yoga</h2>
+    <section class="intro card">
+      <h2><a href="/about-yoga" class="section-link">About Yoga</a></h2>
       <p>Yoga is a practice that aligns the body, mind, and spirit...</p>
     </section>
-    <section class="health">
-      <h2>Living a Healthy Life</h2>
+
+    <section class="health card">
+      <h2><a href="/healthy-life" class="section-link">Living a Healthy Life</a></h2>
       <p>Living a healthy life involves nourishing your body, mind, and soul...</p>
     </section>
-    <section class="routine">
-      <h2>Daily Routines</h2>
+
+    <section class="routine card">
+      <h2><a href="/daily-routines" class="section-link">Daily Routines</a></h2>
       <p>Start each day with intention...</p>
     </section>
-    <section class="links">
-      <h2>Explore More</h2>
+
+    <section class="links card">
+      <h2><a href="/explore-more" class="section-link">Explore More</a></h2>
       <ul>
-        <li><strong>Yoga Routines</strong> - Discover daily yoga sequences</li>
-        <li><strong>Nutrition Tips</strong> - Fuel your body with healthy foods</li>
-        <li><strong>Mindfulness Practices</strong> - Embrace a peaceful state of mind</li>
-        <li><strong>Wellness Blog</strong> - Learn more about living a balanced life</li>
-        <li><strong>Community</strong> - Connect with like-minded people</li>
+        <li><a href="/yoga-routines">Yoga Routines</a> - Discover daily yoga sequences</li>
+        <li><a href="/nutrition-tips">Nutrition Tips</a> - Fuel your body with healthy foods</li>
+        <li><a href="/mindfulness">Mindfulness Practices</a> - Embrace a peaceful state of mind</li>
+        <li><a href="/wellness-blog">Wellness Blog</a> - Learn more about living a balanced life</li>
+        <li><a href="/community">Community</a> - Connect with like-minded people</li>
       </ul>
     </section>
   </main>
@@ -61,5 +67,6 @@
   <footer class="footer">
     <p>© 2024 Early Morning Yoga. All rights reserved.</p>
   </footer>
+
 </body>
 </html>
