@@ -47,6 +47,10 @@ body {
   .welcome-link {
     color: #3c7252;
   }
+
+  .section-link {
+    color: #123d22;
+  }
   
   /* Login Button Styles */
   .login-btn {
