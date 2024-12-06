@@ -19,7 +19,6 @@ Rails.application.configure do
   config.assets.digest = true
   config.assets.compile = true
   # Enable the asset pipeline
-  config.assets.precompile += %w( application.js application.css )
   config.assets.enabled = true
 
   # Enable/disable Action Controller caching. By default Action Controller caching is disabled.

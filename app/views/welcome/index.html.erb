@@ -19,6 +19,13 @@
 
   <!-- Header Section -->
   <header class="header">
+  <div class="menu">
+    <a href="#">Profile</a>
+    <a href="#">Settings</a>
+    <a href="#">Help</a>
+    <a href="#">Logout</a>
+  </div>
+
     <div class="overlay">
       <h1>Welcome to Early Morning Yoga</h1>
       <p>Your peaceful start to a healthy day</p>
@@ -36,9 +43,9 @@
 
   <!-- Main Content -->
   <main class="main-content">
-    <section class="intro card">
+    <section class="about-yoga card">
       <h2><a href="/about-yoga" class="section-link">About Yoga</a></h2>
-      <p>Yoga is a practice that aligns the body, mind, and spirit...</p>
+      <p>Yoga is a practice that aligns the body, mind, and spirit. It is a transformative journey that cultivates inner peace, flexibility, strength, and balance...</p>
     </section>
 
     <section class="health card">
@@ -54,11 +61,11 @@
     <section class="links card">
       <h2><a href="/explore-more" class="section-link">Explore More</a></h2>
       <ul>
-        <li><a href="/yoga-routines" class="welcome-link">Yoga Routines</a> - Discover daily yoga sequences</li>
-        <li><a href="/nutrition-tips" class="welcome-link">Nutrition Tips</a> - Fuel your body with healthy foods</li>
-        <li><a href="/mindfulness" class="welcome-link">Mindfulness Practices</a> - Embrace a peaceful state of mind</li>
-        <li><a href="/wellness-blog" class="welcome-link">Wellness Blog</a> - Learn more about living a balanced life</li>
-        <li><a href="/community" class="welcome-link">Community</a> - Connect with like-minded people</li>
+        <li><a href="/yoga-routines">Yoga Routines</a> - Discover daily yoga sequences</li>
+        <li><a href="/nutrition-tips">Nutrition Tips</a> - Fuel your body with healthy foods</li>
+        <li><a href="/mindfulness">Mindfulness Practices</a> - Embrace a peaceful state of mind</li>
+        <li><a href="/wellness-blog">Wellness Blog</a> - Learn more about living a balanced life</li>
+        <li><a href="/community">Community</a> - Connect with like-minded people</li>
       </ul>
     </section>
   </main>
@@ -67,6 +74,26 @@
   <footer class="footer">
     <p>© 2024 Early Morning Yoga. All rights reserved.</p>
   </footer>
+
+  <!-- JavaScript for Hamburger Menu -->
+  <script>
+    function toggleMenu() {
+      const menu = document.querySelector('.menu');
+      if (menu) {
+        menu.classList.toggle('show-menu');
+      }
+    }
+
+    // Close the menu if clicking outside
+    window.addEventListener('click', function (event) {
+      const menu = document.querySelector('.menu');
+      const menuToggle = document.querySelector('.menu-toggle');
+      if (menu && !menu.contains(event.target) && !menuToggle.contains(event.target)) {
+        menu.classList.remove('show-menu');
+      }
+    });
+  </script>
+
 
 </body>
 </html>
