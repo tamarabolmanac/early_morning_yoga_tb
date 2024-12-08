@@ -12,7 +12,7 @@ body {
   .header {
     position: relative;
     height: 100vh;
-    background: linear-gradient(135deg, #a8d5ba, #b7a392);  /* Gradient background */
+    background: url('https://early-morning-yoga.s3.us-east-1.amazonaws.com/still-life-yoga-equipment.jpg');
     color: white;
     display: flex;
     justify-content: center;
@@ -195,60 +195,57 @@ body {
 }
 
 /* about_yoga.css */
-/* About Yoga Intro Section Styling */
-body.about_yoga-page .about-yoga-intro {
-  position: relative;
-  background-image: url('/images/yoga-header.jpg'); /* Replace with your image path */
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+.about-yoga-header {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.about-yoga-text {
+  font-family: 'Open Sans', sans-serif;
+  text-align: justify;
+}
+
+.blue-bg {
+  position: fixed;
+  background: url('https://early-morning-yoga.s3.us-east-1.amazonaws.com/still-life-yoga-equipment-2.jpg');
   background-size: cover;
-  background-position: center;
-  height: 80vh; /* Make the intro section large for impact */
-  color: white;
+  background-color: #58aff6;
+  top: 0;
+  height: 400px;
+  width: 100vw;
+  z-index: -1;
+  overflow-x: hidden;
+}
+
+.white-bg {
+  position: absolute;
+  top: 0;
+  background-color: #fff;
+  min-height: 500px;
+  margin: 210px 0;
+  width: 100vw;
+  height: 100vh;
+  transform: skewY(5deg);
+  z-index: -1;
+}
+
+.content {
+  position: absolute;
+  top: 0;
+  margin: 250px 10vw;
+  max-width: 60vw;
+  background-color: transparent;
+}
+
+.shadow {
+  box-shadow: -2px -5px 5px 0px rgba(0, 0, 0, 0.3);
+}
+
+.welcome-text {
   text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 20px;
-  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5); /* Subtle shadow effect inside */
+  position: absolute;
 }
 
-body.about_yoga-page .about-yoga-overlay {
-  background: rgba(0, 0, 0, 0.6); /* Darker overlay for better text readability */
-  padding: 20px;
-  border-radius: 10px;
-  max-width: 800px; /* Limiting max width for better layout */
-}
 
-body.about_yoga-page .about-yoga-intro h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 4.5rem; /* Larger size for more impact */
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Add a subtle text shadow */
-  margin-bottom: 20px;
-}
-
-body.about_yoga-page .about-yoga-intro p {
-  font-size: 1.8rem;
-  font-weight: 300;
-  letter-spacing: 1px;
-  line-height: 1.6;
-  font-family: 'Raleway', sans-serif;
-  max-width: 700px; /* Limit width of the text for readability */
-  margin: 0 auto;
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5); /* Text shadow to enhance readability */
-  color: #f0f0f0; /* Slightly softer white */
-}
-
-/* Add subtle hover effect for the text */
-body.about_yoga-page .about-yoga-intro h1:hover {
-  color: #f4e1d2; /* Change text color on hover */
-  transform: scale(1.05); /* Slightly scale up text */
-  transition: all 0.3s ease-in-out;
-}
-
-body.about_yoga-page .about-yoga-intro p:hover {
-  color: #f4e1d2; /* Light peach color for contrast */
-  transform: scale(1.05); /* Slightly scale up text */
-  transition: all 0.3s ease-in-out;
-}
