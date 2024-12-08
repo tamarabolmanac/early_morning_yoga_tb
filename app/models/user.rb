@@ -31,7 +31,10 @@ class User < ApplicationRecord
   end
 
   def send_confirmation_email!
-    confirmation_token = generate_confirmation_token
-    UserMailer.confirmation(self, confirmation_token).deliver_now
+    UserMailer.confirmation(self, generate_confirmation_token).deliver_now
+  end
+
+  def send_reset_password_request
+    UserMailer.reset_password(self, generate_confirmation_token).deliver_now
   end
 end

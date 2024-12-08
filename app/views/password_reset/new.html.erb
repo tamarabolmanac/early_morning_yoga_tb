@@ -1,0 +1,28 @@
+<% if flash[:notice] %>
+  <div class="flash-message notice">
+    <%= flash[:notice] %>
+  </div>
+<% elsif flash[:alert] %>
+  <div class="flash-message alert">
+    <%= flash[:alert] %>
+  </div>
+<% end %>
+
+<%= content_tag :h1, "Enter new password", class: "page-title" %>
+
+<div class="forgot_password">
+  <%= form_with url: password_reset_path, method: :post, local: true, class: "login-form" do |f| %>
+    <div class="form-field">
+      <%= f.label :new_password, "New password" %>
+      <%= f.password_field :new_password, required: true, placeholder: "Enter new password", class: "input-field" %>
+    </div>
+    <div class="form-field">
+      <%= f.label :new_password_confirmation, "Confirm password" %>
+      <%= f.password_field :new_password_confirmation, required: true, placeholder: "Enter new password confirmation", class: "input-field" %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.submit "Confirm", class: "submit-btn" %>
+    </div>
+  <% end %>
+</div>
