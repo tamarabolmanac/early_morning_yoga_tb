@@ -19,5 +19,5 @@ Rails.application.routes.draw do
   post "/request_reset", to: "password_reset#request_reset"
   get "password_reset/confirm_email/:token", to: "password_reset#confirm_email", as: 'confirm_email'
   get "password_reset/new_password/:token", to: "password_reset#new_password", as: 'new_password'
-  get "password_reset/reset_password/:token", to: "password_reset#reset_password", as: 'reset_password'
+  post "password_reset/reset_password/:token", to: "password_reset#reset_password", as: 'reset_password'
 end
