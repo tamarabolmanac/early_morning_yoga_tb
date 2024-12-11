@@ -17,5 +17,5 @@ Rails.application.routes.draw do
 
   get "/change_password", to: "password_reset#change_password"
   post "/request_reset", to: "password_reset#request_reset"
-  get "/reset_password/:token", to: "password_reset#reset_password", as: 'reset_password'
+  get "password_reset/reset_password/:token", to: "password_reset#reset_password", as: 'reset_password'
 end
