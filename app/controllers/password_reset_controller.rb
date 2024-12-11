@@ -9,7 +9,7 @@ class PasswordResetController < ApplicationController
     new_password = params[:new_password]
     new_password_confirmation = params[:new_password_confirmation]
 
-    if !user.present?
+    if !@user.present?
       redirect_to new_password_reset_path, alert: "Invalid token."
     elsif new_password != new_password_confirmation
       redirect_to new_password_reset_path, alert: "Two password inputs must match."
