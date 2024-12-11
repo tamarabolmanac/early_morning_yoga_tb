@@ -1,10 +1,10 @@
 class PasswordResetController < ApplicationController
-  def new
-    @user = User.find_by_email(params[:email])
+  def new_password
   end
 
-  def create
-    byebug
+  def reset_password
+    @user = User.find_signed(params[:token])
+
     new_password = params[:new_password]
     new_password_confirmation = params[:new_password_confirmation]
 
@@ -13,7 +13,8 @@ class PasswordResetController < ApplicationController
     elsif !helpers.valid_password?(new_password)
       redirect_to new_password_reset_path, alert: "User password must include at least one lowercase letter, one uppercase letter, one digit, and needs to be minimum 8 characters long."
     else
-      
+      @user.password = new_password
+      @user.save!
     end
   end
 
@@ -31,11 +32,11 @@ class PasswordResetController < ApplicationController
     end
   end
 
-  def reset_password
+  def confirm_email
     @user = User.find_signed(params[:token])
 
     if @user.present?
-      redirect_to new_password_reset_path(@user.email)
+      redirect_to new_password_path(params[:token])
     else
       redirect_to "/change_password", alert: "Invalid token."
     end
