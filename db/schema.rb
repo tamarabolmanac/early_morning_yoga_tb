@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_12_01_192605) do
+ActiveRecord::Schema[8.0].define(version: 2024_12_11_214859) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -25,5 +25,6 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_01_192605) do
     t.datetime "confirmed_at"
     t.string "password_digest", null: false
     t.boolean "subscribed_to_newsletter", default: false
+    t.boolean "password_reset_requested", default: false
   end
 end

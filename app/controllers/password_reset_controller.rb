@@ -9,7 +9,7 @@ class PasswordResetController < ApplicationController
     new_password = params[:new_password]
     new_password_confirmation = params[:new_password_confirmation]
 
-    if !@user.present?
+    if !@user.present? || !@user.password_reset_requested
       redirect_to new_password_reset_path, alert: "Invalid token."
     elsif new_password != new_password_confirmation
       redirect_to new_password_reset_path, alert: "Two password inputs must match."
@@ -17,7 +17,9 @@ class PasswordResetController < ApplicationController
       redirect_to new_password_reset_path, alert: "User password must include at least one lowercase letter, one uppercase letter, one digit, and needs to be minimum 8 characters long."
     else
       @user.password = new_password
+      @user.password_reset_requested = false
       @user.save!
+      redirect_to root_path, notice: "Your password is successfuly changed!"
     end
   end
 
@@ -39,6 +41,7 @@ class PasswordResetController < ApplicationController
     @user = User.find_signed(params[:token])
 
     if @user.present?
+      @user.update!(password_reset_requested: true)
       redirect_to new_password_path(params[:token])
     else
       redirect_to "/change_password", alert: "Invalid token."
