@@ -1,5 +1,6 @@
 class PasswordResetController < ApplicationController
   def new_password
+    @token = params[:token]
   end
 
   def reset_password
@@ -8,7 +9,9 @@ class PasswordResetController < ApplicationController
     new_password = params[:new_password]
     new_password_confirmation = params[:new_password_confirmation]
 
-    if new_password != new_password_confirmation
+    if !user.present?
+      redirect_to new_password_reset_path, alert: "Invalid token."
+    elsif new_password != new_password_confirmation
       redirect_to new_password_reset_path, alert: "Two password inputs must match."
     elsif !helpers.valid_password?(new_password)
       redirect_to new_password_reset_path, alert: "User password must include at least one lowercase letter, one uppercase letter, one digit, and needs to be minimum 8 characters long."
