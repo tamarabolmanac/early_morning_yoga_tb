@@ -1,9 +1,13 @@
 class PasswordResetController < ApplicationController
   def new_password
+    p "TOKEN FROM NEW PASSWORD"
+    p params
     @token = params[:token]
   end
 
   def reset_password
+    p "TOKEN FROM RESET PASSWORD"
+    p params
     @user = User.find_signed(params[:token])
 
     new_password = params[:new_password]
@@ -44,7 +48,7 @@ class PasswordResetController < ApplicationController
       @user.update!(password_reset_requested: true)
       redirect_to new_password_path(params[:token])
     else
-      redirect_to "/change_password", alert: "Invalid token."
+      redirect_to "/change_password", alert: "Invalid token for confirmation."
     end
   end
 end
