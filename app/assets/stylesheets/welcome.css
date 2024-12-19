@@ -12,7 +12,7 @@ body {
   .header {
     position: relative;
     height: 100vh;
-    background-image: url('https://early-morning-yoga.s3.us-east-1.amazonaws.com/still-life-yoga-equipment.jpg');
+    background-image: url('https://d2ossb1wa6u6i5.cloudfront.net/still-life-yoga-equipment.jpg');
     color: white;
     display: flex;
     justify-content: center;
@@ -215,7 +215,7 @@ body {
 
 .blue-bg {
   position: relative;
-  background-image: url('https://early-morning-yoga.s3.us-east-1.amazonaws.com/still-life-yoga-equipment-2.jpg');
+  background-image: url('https://d2ossb1wa6u6i5.cloudfront.net/still-life-yoga-equipment-2.jpg');
   background-size: cover; /* Ensures the background image covers the section */
   background-position: center;
   background-color: #58aff6;

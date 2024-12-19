@@ -29,7 +29,7 @@ class PasswordResetController < ApplicationController
   def request_reset
     @user = User.find_by_email(params[:email])
 
-    if @user
+    if @user && @user.confirmed?
       @user.send_reset_password_request
       redirect_to "/change_password", notice: "Verify your email in order to proceed"
     else
